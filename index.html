@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zay — Developer Portfolio">
+  <title>Zay Wunna — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="#home" aria-label="Homepage">ZAY<span>.</span></a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-resume-btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">☼</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section id="home" class="hero container section">
+      <div class="hero-content">
+        <p class="eyebrow">Hello, I'm </p>
+        <h1>Zay</h1>
+        <h2>I'm building my path as a software engineer.</h2>
+        <p class="hero-text">
+          Based in Japan, focused on Java, Python, JavaScript, databases, and cloud technologies.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View My Work</a>
+          <a class="button button-secondary" href="#contact">Get In Touch</a>
+          <a class="button button-resume" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section container">
+      <div class="section-heading">
+        <span>01.</span>
+        <h2>About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a developer based in Japan, currently building my skills toward a career in software engineering.
+            
+          </p>
+          <p>
+            My background is in International Relations, but over time I became increasingly interested in technology and software development. 
+            I started learning web technologies such as HTML, CSS, and JavaScript, and that interest eventually grew into a deeper focus on programming and software engineering.
+          </p>
+          <p>
+            I'm currently studying AI programming and strengthening my foundation in Java, Python, JavaScript, SQL, databases, APIs, Git, and cloud technologies. I enjoy learning by building projects and solving problems rather than only studying theory.
+            
+          </p>
+          <p>
+            My goal is to become a well-rounded software engineer who can build reliable, useful applications and continue growing with new technologies.
+          </p>
+
+          <h3>Technologies I'm learning and working with</h3>
+          <ul class="tech-list">
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>Git</li>
+          </ul>
+        </div>
+
+        <div class="about-photo-wrapper">
+          <div class="about-photo-card">
+            <img src="images/1785734673148.jpg" alt="Profile photo" class="about-photo-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience" class="section container">
+      <div class="section-heading">
+        <span>02.</span>
+        <h2>Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <!-- Duplicate/remove timeline-item blocks as needed. -->
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <p class="date">JAN 2020 — JUL 2024</p>
+            <h3>Reception & Administrative Assistant</h3>
+            <p class="company">Family-run Dental Clinic · Myanmar</p>
+            <ul>
+              <li>Assisted patients with reception and general inquiries.</li>
+              <li>Handled phone calls and appointment scheduling.</li>
+              <li>Processed payments and issued receipts.</li>
+              <li>Organized patient information and performed data entry.</li>
+              <li>Assisted with basic computer tasks and inventory management.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <p class="date">MAR 2025 — PRESENT</p>
+            <h3>Café Staff — Customer Service / Cashier</h3>
+            <p class="company">Saint Marc Café · Japan</p>
+            <ul>
+              <li>Handled customer orders and cashier operations.</li>
+              <li>Prepared drinks according to customer orders.</li>
+              <li>Provided customer service in a busy café environment.</li>
+              <li>Supported store cleaning and opening/closing operations.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION ==================== -->
+    <section id="education" class="section container">
+      <div class="section-heading">
+        <span>03.</span>
+        <h2>Education</h2>
+      </div>
+
+      <div class="education-grid">
+        <article class="info-card">
+          <p class="date">2015 — 2019</p>
+          <h3>Bachelor of Arts in International Relations</h3>
+          <p class="muted">East Yangon University · Myanmar</p>
+          <p>Studied international relations and related social sciences.</p>
+        </article>
+
+        <article class="info-card">
+          <p class="date">2026 — PRESENT</p>
+          <h3>AI Programming Course</h3>
+          <p class="muted">TOKYO MIRAI AI & IT Vocational School · Japan</p>
+          <p>Currently studying programming and information technology with a focus on software development, databases, and AI-related technologies.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="section container">
+      <div class="section-heading">
+        <span>04.</span>
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3>Programming</h3>
+          <ul>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>Development</h3>
+          <ul>
+            <li>Object-Oriented Programming</li>
+            <li>REST APIs</li>
+            <li>Database Fundamentals</li>
+            <li>Web Development</li>
+            <li>Git / GitHub</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>Tools & Technologies</h3>
+          <ul>
+            <li>VS Code</li>
+            <li>Docker</li>
+            <li>AWS / Cloud</li>
+            <li>Eclipse</li>
+            <li>MySQL</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <h3>Spoken Languages</h3>
+          <ul>
+            <li><strong>Japanese:</strong> Conversational (Daily Workplace)</li>
+            <li><strong>English:</strong> Professional Working</li>
+            <li><strong>Burmese:</strong> Native</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" class="section container">
+      <div class="section-heading">
+        <span>05.</span>
+        <h2>Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Copy this project card when you add more projects. -->
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="images/project-placeholder.svg" alt="Project preview" class="project-image" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="folder">⌘</span>
+              <div class="project-links">
+                <a href="#" aria-label="Project GitHub">GitHub ↗</a>
+                <a href="#" aria-label="Live project">Live ↗</a>
+              </div>
+            </div>
+            <h3>Project Name</h3>
+            <p>
+              Project comming soon.
+            </p>
+            <ul class="project-tech">
+              <li>Java</li>
+              <li>SQL</li>
+              <li>YOUR TECH</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="images/project-placeholder.svg" alt="Project preview" class="project-image" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="folder">⌘</span>
+              <div class="project-links">
+                <a href="#" aria-label="Project GitHub">GitHub ↗</a>
+                <a href="#" aria-label="Live project">Live ↗</a>
+              </div>
+            </div>
+            <h3>Project Name</h3>
+            <p>
+              Project comming soon.
+            </p>
+            <ul class="project-tech">
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="images/project-placeholder.svg" alt="Project preview" class="project-image" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-top">
+              <span class="folder">⌘</span>
+              <div class="project-links">
+                <a href="#" aria-label="Project GitHub">GitHub ↗</a>
+                <a href="#" aria-label="Live project">Live ↗</a>
+              </div>
+            </div>
+            <h3>Project Name</h3>
+            <p>
+              Project comming soon.
+            </p>
+            <ul class="project-tech">
+              <li>Python</li>
+              <li>API</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section contact-section container">
+      <div class="section-heading">
+        <span>06.</span>
+        <h2>Contact</h2>
+      </div>
+
+      <div class="contact-box contact-form-box">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2>Let's connect.</h2>
+        <p>
+          I'm currently building my career in software engineering and am open to relevant opportunities and conversations. Feel free to send me a message.
+        </p>
+
+        <!--
+          Web3Forms:
+          1. Create an access key at https://web3forms.com/
+          2. Replace YOUR_WEB3FORMS_ACCESS_KEY below.
+          3. Do NOT put your personal email address in this HTML.
+        -->
+        <form id="contact-form" class="contact-form" novalidate>
+          <input
+            type="hidden"
+            name="access_key"
+            value="e7783afe-24c6-46cb-9abd-eca012680f7e"
+          >
+
+          <!-- Honeypot: normal visitors never fill this field. -->
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="hidden-field"
+            tabindex="-1"
+            autocomplete="off"
+          >
+
+          <input type="hidden" name="subject" value="New Portfolio Contact">
+          <input type="hidden" name="from_name" value="Portfolio Contact Form">
+
+          <div class="form-row">
+            <label>
+              Name
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                maxlength="80"
+                required
+              >
+            </label>
+
+            <label>
+              Email
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                maxlength="120"
+                required
+              >
+            </label>
+          </div>
+
+          <label>
+            Subject
+            <input
+              type="text"
+              name="message_subject"
+              placeholder="What would you like to discuss?"
+              maxlength="150"
+              required
+            >
+          </label>
+
+          <label>
+            Message
+            <textarea
+              name="message"
+              rows="7"
+              placeholder="Write your message..."
+              maxlength="3000"
+              required
+            ></textarea>
+          </label>
+
+          <div class="form-footer">
+            <span class="form-note">I'll get back to you by email.</span>
+            <button class="button button-primary" type="submit" id="contact-submit">
+              Send Message
+            </button>
+          </div>
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>ZAY</strong>
+        <p>Built with HTML, CSS & JavaScript.</p>
+      </div>
+
+      <div class="social-links">
+        <!-- Replace these links with your real profiles. -->
+        <a href="https://github.com/zaysocial19-stack" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+
+      <p>© <span id="year"></span> ZAY</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
