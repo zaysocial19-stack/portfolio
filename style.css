@@ -94,14 +94,43 @@ ul {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
 
-.logo span {
-  color: var(--accent);
+.logo-sun {
+  width: 26px;
+  height: 26px;
+  stroke: var(--accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: sunPulse 3s ease-in-out infinite;
 }
+
+@keyframes sunPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 4px var(--accent));
+  }
+}
+
+.logo:hover .logo-sun {
+  transform: scale(1.1);
+}
+
+/* .logo span {
+  color: var(--accent);
+} */
 
 .nav-links {
   display: flex;
