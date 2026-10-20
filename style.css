@@ -161,12 +161,14 @@ ul {
   background: var(--accent);
 }
 
+.lang-toggle,
 .theme-toggle,
 .menu-toggle {
   border: 0;
   color: var(--text);
   background: transparent;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .theme-toggle {
@@ -175,6 +177,45 @@ ul {
   border: 1px solid var(--border);
   border-radius: 50%;
   font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.lang-toggle {
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.lang-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.lang-toggle-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.lang-toggle-text {
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .menu-toggle {
@@ -987,11 +1028,12 @@ html.dark .form-status.error {
     display: none;
   }
 
+  .lang-toggle,
   .theme-toggle {
     width: 100%;
     border-radius: 8px;
-    text-align: left;
-    padding-left: 8px;
+    padding: 10px 10px;
+    justify-content: flex-start;
   }
 
   .about-grid {

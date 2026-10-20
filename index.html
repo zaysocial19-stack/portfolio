@@ -55,13 +55,17 @@
       </button>
 
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <button class="nav-resume-btn" type="button" id="open-doc-modal-nav">Request Documents</button>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#education" data-i18n="nav.education">Education</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <button class="nav-resume-btn" type="button" id="open-doc-modal-nav" data-i18n="nav.request_docs">Request Documents</button>
+        <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch to Japanese" title="Switch to Japanese / 日本語に切り替え">
+          <span class="lang-toggle-icon">🌐</span>
+          <span class="lang-toggle-text" id="lang-toggle-text">JA</span>
+        </button>
         <button class="theme-toggle" type="button" aria-label="Toggle color theme">☼</button>
       </div>
     </nav>
@@ -71,16 +75,16 @@
     <!-- ==================== HERO ==================== -->
     <section id="home" class="hero container section">
       <div class="hero-content">
-        <p class="eyebrow">Hello, I'm </p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Hello, I'm </p>
         <h1>Zay</h1>
-        <h2>I'm building my path as a software engineer.</h2>
-        <p class="hero-text">
+        <h2 data-i18n="hero.tagline">I'm building my path as a software engineer.</h2>
+        <p class="hero-text" data-i18n="hero.text">
           Based in Japan, focused on Java, Python, JavaScript, databases, and cloud technologies.
         </p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#projects">View My Work</a>
-          <a class="button button-secondary" href="#contact">Get In Touch</a>
+          <a class="button button-primary" href="#projects" data-i18n="hero.btn_projects">View My Work</a>
+          <a class="button button-secondary" href="#contact" data-i18n="hero.btn_contact">Get In Touch</a>
           <button class="button button-resume" type="button" id="open-doc-modal-hero">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -89,7 +93,7 @@
               <line x1="16" y1="17" x2="8" y2="17"></line>
               <polyline points="10 9 9 9 8 9"></polyline>
             </svg>
-            Request Documents
+            <span data-i18n="hero.btn_docs">Request Documents</span>
           </button>
         </div>
       </div>
@@ -98,29 +102,27 @@
     <!-- ==================== ABOUT ==================== -->
     <section id="about" class="section container">
       <div class="section-heading">
-        <span>01.</span>
-        <h2>About Me</h2>
+        <span data-i18n="about.heading_num">01.</span>
+        <h2 data-i18n="about.heading_title">About Me</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-text">
-          <p>
+          <p data-i18n="about.p1">
             I'm a developer based in Japan, currently building my skills toward a career in software engineering.
-            
           </p>
-          <p>
+          <p data-i18n="about.p2">
             My background is in International Relations, but over time I became increasingly interested in technology and software development. 
             I started learning web technologies such as HTML, CSS, and JavaScript, and that interest eventually grew into a deeper focus on programming and software engineering.
           </p>
-          <p>
+          <p data-i18n="about.p3">
             I'm currently studying AI programming and strengthening my foundation in Java, Python, JavaScript, SQL, databases, APIs, Git, and cloud technologies. I enjoy learning by building projects and solving problems rather than only studying theory.
-            
           </p>
-          <p>
+          <p data-i18n="about.p4">
             My goal is to become a well-rounded software engineer who can build reliable, useful applications and continue growing with new technologies.
           </p>
 
-          <h3>Technologies I'm learning and working with</h3>
+          <h3 data-i18n="about.tech_heading">Technologies I'm learning and working with</h3>
           <ul class="tech-list">
             <li>HTML & CSS</li>
             <li>JavaScript</li>
@@ -141,8 +143,8 @@
     <!-- ==================== EXPERIENCE ==================== -->
     <section id="experience" class="section container">
       <div class="section-heading">
-        <span>02.</span>
-        <h2>Experience</h2>
+        <span data-i18n="exp.heading_num">02.</span>
+        <h2 data-i18n="exp.heading_title">Experience</h2>
       </div>
 
       <div class="timeline">
@@ -150,15 +152,15 @@
         <article class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <p class="date">JAN 2020 — JUL 2024</p>
-            <h3>Reception & Administrative Assistant</h3>
-            <p class="company">Family-run Dental Clinic · Myanmar</p>
+            <p class="date" data-i18n="exp.item1_date">JAN 2020 — JUL 2024</p>
+            <h3 data-i18n="exp.item1_title">Reception & Administrative Assistant</h3>
+            <p class="company" data-i18n="exp.item1_company">Family-run Dental Clinic · Myanmar</p>
             <ul>
-              <li>Assisted patients with reception and general inquiries.</li>
-              <li>Handled phone calls and appointment scheduling.</li>
-              <li>Processed payments and issued receipts.</li>
-              <li>Organized patient information and performed data entry.</li>
-              <li>Assisted with basic computer tasks and inventory management.</li>
+              <li data-i18n="exp.item1_li1">Assisted patients with reception and general inquiries.</li>
+              <li data-i18n="exp.item1_li2">Handled phone calls and appointment scheduling.</li>
+              <li data-i18n="exp.item1_li3">Processed payments and issued receipts.</li>
+              <li data-i18n="exp.item1_li4">Organized patient information and performed data entry.</li>
+              <li data-i18n="exp.item1_li5">Assisted with basic computer tasks and inventory management.</li>
             </ul>
           </div>
         </article>
@@ -166,14 +168,14 @@
         <article class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <p class="date">MAR 2025 — PRESENT</p>
-            <h3>Café Staff — Customer Service / Cashier</h3>
-            <p class="company">Saint Marc Café · Japan</p>
+            <p class="date" data-i18n="exp.item2_date">MAR 2025 — PRESENT</p>
+            <h3 data-i18n="exp.item2_title">Café Staff — Customer Service / Cashier</h3>
+            <p class="company" data-i18n="exp.item2_company">Saint Marc Café · Japan</p>
             <ul>
-              <li>Handled customer orders and cashier operations.</li>
-              <li>Prepared drinks according to customer orders.</li>
-              <li>Provided customer service in a busy café environment.</li>
-              <li>Supported store cleaning and opening/closing operations.</li>
+              <li data-i18n="exp.item2_li1">Handled customer orders and cashier operations.</li>
+              <li data-i18n="exp.item2_li2">Prepared drinks according to customer orders.</li>
+              <li data-i18n="exp.item2_li3">Provided customer service in a busy café environment.</li>
+              <li data-i18n="exp.item2_li4">Supported store cleaning and opening/closing operations.</li>
             </ul>
           </div>
         </article>
@@ -183,23 +185,23 @@
     <!-- ==================== EDUCATION ==================== -->
     <section id="education" class="section container">
       <div class="section-heading">
-        <span>03.</span>
-        <h2>Education</h2>
+        <span data-i18n="edu.heading_num">03.</span>
+        <h2 data-i18n="edu.heading_title">Education</h2>
       </div>
 
       <div class="education-grid">
         <article class="info-card">
-          <p class="date">2015 — 2019</p>
-          <h3>Bachelor of Arts in International Relations</h3>
-          <p class="muted">East Yangon University · Myanmar</p>
-          <p>Studied international relations and related social sciences.</p>
+          <p class="date" data-i18n="edu.item1_date">2015 — 2019</p>
+          <h3 data-i18n="edu.item1_title">Bachelor of Arts in International Relations</h3>
+          <p class="muted" data-i18n="edu.item1_school">East Yangon University · Myanmar</p>
+          <p data-i18n="edu.item1_desc">Studied international relations and related social sciences.</p>
         </article>
 
         <article class="info-card">
-          <p class="date">2026 — PRESENT</p>
-          <h3>AI Programming Course</h3>
-          <p class="muted">TOKYO MIRAI AI & IT Vocational School · Japan</p>
-          <p>Currently studying programming and information technology with a focus on software development, databases, and AI-related technologies.</p>
+          <p class="date" data-i18n="edu.item2_date">2026 — PRESENT</p>
+          <h3 data-i18n="edu.item2_title">AI Programming Course</h3>
+          <p class="muted" data-i18n="edu.item2_school">TOKYO MIRAI AI & IT Vocational School · Japan</p>
+          <p data-i18n="edu.item2_desc">Currently studying programming and information technology with a focus on software development, databases, and AI-related technologies.</p>
         </article>
       </div>
     </section>
@@ -207,13 +209,13 @@
     <!-- ==================== SKILLS ==================== -->
     <section id="skills" class="section container">
       <div class="section-heading">
-        <span>04.</span>
-        <h2>Skills &amp; Tools</h2>
+        <span data-i18n="skills.heading_num">04.</span>
+        <h2 data-i18n="skills.heading_title">Skills &amp; Tools</h2>
       </div>
 
       <div class="skills-grid">
         <article class="skill-category">
-          <h3 class="skill-category-title">Programming</h3>
+          <h3 class="skill-category-title" data-i18n="skills.cat_programming">Programming</h3>
           <div class="skill-tags">
             <span class="skill-tag">Java</span>
             <span class="skill-tag">JavaScript</span>
@@ -223,7 +225,7 @@
         </article>
 
         <article class="skill-category">
-          <h3 class="skill-category-title">Development &amp; Engineering</h3>
+          <h3 class="skill-category-title" data-i18n="skills.cat_dev">Development &amp; Engineering</h3>
           <div class="skill-tags">
             <span class="skill-tag">Object-Oriented Programming</span>
             <span class="skill-tag">Git &amp; GitHub</span>
@@ -233,7 +235,7 @@
         </article>
 
         <article class="skill-category">
-          <h3 class="skill-category-title">Web</h3>
+          <h3 class="skill-category-title" data-i18n="skills.cat_web">Web</h3>
           <div class="skill-tags">
             <span class="skill-tag">HTML</span>
             <span class="skill-tag">CSS</span>
@@ -242,16 +244,16 @@
         </article>
 
         <article class="skill-category">
-          <h3 class="skill-category-title">Languages</h3>
+          <h3 class="skill-category-title" data-i18n="skills.cat_languages">Languages</h3>
           <div class="skill-tags">
-            <span class="skill-tag">Myanmar (Native)</span>
-            <span class="skill-tag">English (Professional Working)</span>
-            <span class="skill-tag">Japanese (JLPT N2)</span>
+            <span class="skill-tag" data-i18n="skills.lang_myanmar">Myanmar (Native)</span>
+            <span class="skill-tag" data-i18n="skills.lang_english">English (Professional Working)</span>
+            <span class="skill-tag" data-i18n="skills.lang_japanese">Japanese (JLPT N2)</span>
           </div>
         </article>
 
         <article class="skill-category">
-          <h3 class="skill-category-title">Tools & Technologies</h3>
+          <h3 class="skill-category-title" data-i18n="skills.cat_tools">Tools &amp; Technologies</h3>
           <div class="skill-tags">
             <span class="skill-tag">Linux</span>
             <span class="skill-tag">Docker</span>
@@ -262,7 +264,7 @@
         </article>
 
         <article class="skill-category">
-          <h3 class="skill-category-title">Currently Learning</h3>
+          <h3 class="skill-category-title" data-i18n="skills.cat_learning">Currently Learning</h3>
           <div class="skill-tags">
             <span class="skill-tag skill-tag--learning">Spring Boot</span>
             <span class="skill-tag skill-tag--learning">Japanese N1</span>
@@ -278,8 +280,8 @@
     <!-- ==================== PROJECTS ==================== -->
     <section id="projects" class="section container">
       <div class="section-heading">
-        <span>05.</span>
-        <h2>Projects</h2>
+        <span data-i18n="projects.heading_num">05.</span>
+        <h2 data-i18n="projects.heading_title">Projects</h2>
       </div>
 
       <div class="projects-grid">
@@ -297,8 +299,8 @@
               </div>
             </div>
             <h3>Project Name</h3>
-            <p>
-              Project comming soon.
+            <p data-i18n="projects.comming_soon">
+              Project coming soon.
             </p>
             <ul class="project-tech">
               <li>Java</li>
@@ -321,8 +323,8 @@
               </div>
             </div>
             <h3>Project Name</h3>
-            <p>
-              Project comming soon.
+            <p data-i18n="projects.comming_soon">
+              Project coming soon.
             </p>
             <ul class="project-tech">
               <li>JavaScript</li>
@@ -345,8 +347,8 @@
               </div>
             </div>
             <h3>Project Name</h3>
-            <p>
-              Project comming soon.
+            <p data-i18n="projects.comming_soon">
+              Project coming soon.
             </p>
             <ul class="project-tech">
               <li>Python</li>
@@ -361,14 +363,14 @@
     <!-- ==================== CONTACT ==================== -->
     <section id="contact" class="section contact-section container">
       <div class="section-heading">
-        <span>06.</span>
-        <h2>Contact</h2>
+        <span data-i18n="contact.heading_num">06.</span>
+        <h2 data-i18n="contact.heading_title">Contact</h2>
       </div>
 
       <div class="contact-box contact-form-box">
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2>Let's connect.</h2>
-        <p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">GET IN TOUCH</p>
+        <h2 data-i18n="contact.title">Let's connect.</h2>
+        <p data-i18n="contact.desc">
           I'm currently building my career in software engineering and am open to relevant opportunities and conversations. Feel free to send me a message.
         </p>
 
@@ -394,16 +396,14 @@
             autocomplete="off"
           >
 
-      
-          
-
           <div class="form-row">
             <label>
-              Name
+              <span data-i18n="contact.name_label">Name</span>
               <input
                 type="text"
                 name="name"
                 placeholder="Your name"
+                data-i18n-placeholder="contact.name_placeholder"
                 autocomplete="name"
                 maxlength="80"
                 required
@@ -411,11 +411,12 @@
             </label>
 
             <label>
-              Email
+              <span data-i18n="contact.email_label">Email</span>
               <input
                 type="email"
                 name="email"
                 placeholder="you@example.com"
+                data-i18n-placeholder="contact.email_placeholder"
                 autocomplete="email"
                 maxlength="120"
                 required
@@ -424,30 +425,32 @@
           </div>
 
           <label>
-            Subject
+            <span data-i18n="contact.subject_label">Subject</span>
             <input
               type="text"
               name="subject"
               placeholder="What would you like to discuss?"
+              data-i18n-placeholder="contact.subject_placeholder"
               maxlength="150"
               required
             >
           </label>
 
           <label>
-            Message
+            <span data-i18n="contact.message_label">Message</span>
             <textarea
               name="message"
               rows="7"
               placeholder="Write your message..."
+              data-i18n-placeholder="contact.message_placeholder"
               maxlength="3000"
               required
             ></textarea>
           </label>
 
           <div class="form-footer">
-            <span class="form-note">I'll get back to you by email.</span>
-            <button class="button button-primary" type="submit" id="contact-submit">
+            <span class="form-note" data-i18n="contact.note">I'll get back to you by email.</span>
+            <button class="button button-primary" type="submit" id="contact-submit" data-i18n="contact.submit_btn">
               Send Message
             </button>
           </div>
@@ -463,13 +466,13 @@
     <div class="container footer-inner">
       <div>
         <strong>ZAY</strong>
-        <p>Built with HTML, CSS & JavaScript.</p>
+        <p data-i18n="footer.built_with">Built with HTML, CSS & JavaScript.</p>
       </div>
 
       <div class="social-links">
         <!-- Replace these links with your real profiles. -->
         <a href="https://github.com/zaysocial19-stack" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="www.linkedin.com/in/zay-wunna-635a03440" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
 
       <p>© <span id="year"></span> ZAY</p>
@@ -481,13 +484,13 @@
     <div class="doc-modal-content">
       <div class="doc-modal-header">
         <div>
-          <span class="doc-modal-eyebrow">Direct Inquiry</span>
-          <h2 class="doc-modal-title">Request Documents</h2>
+          <span class="doc-modal-eyebrow" data-i18n="modal.eyebrow">Direct Inquiry</span>
+          <h2 class="doc-modal-title" data-i18n="modal.title">Request Documents</h2>
         </div>
         <button type="button" class="doc-modal-close" id="close-doc-modal" aria-label="Close modal">✕</button>
       </div>
 
-      <p class="doc-modal-desc">
+      <p class="doc-modal-desc" data-i18n="modal.desc">
         To protect personal privacy, my full CV, Japanese 履歴書, and 自己PR are provided upon request. Please select what you need and I will reply directly to your email.
       </p>
 
@@ -498,50 +501,50 @@
 
         <div class="form-row">
           <label>
-            Your Name
-            <input type="text" name="name" placeholder="e.g. Jane Doe / 田中 太郎" required maxlength="80">
+            <span data-i18n="modal.name_label">Your Name</span>
+            <input type="text" name="name" placeholder="e.g. Jane Doe / 田中 太郎" data-i18n-placeholder="modal.name_placeholder" required maxlength="80">
           </label>
           <label>
-            Work / Direct Email
-            <input type="email" name="email" placeholder="name@company.com" required maxlength="120">
+            <span data-i18n="modal.email_label">Work / Direct Email</span>
+            <input type="email" name="email" placeholder="name@company.com" data-i18n-placeholder="modal.email_placeholder" required maxlength="120">
           </label>
         </div>
 
         <label>
-          Company / Organization <small class="optional-label">(Optional)</small>
-          <input type="text" name="company" placeholder="Company, agency, school, or organization" maxlength="120">
+          <span data-i18n="modal.company_label">Company / Organization</span> <small class="optional-label">(Optional)</small>
+          <input type="text" name="company" placeholder="Company, agency, school, or organization" data-i18n-placeholder="modal.company_placeholder" maxlength="120">
         </label>
 
         <div class="doc-checkboxes-group">
-          <span class="doc-group-label">Documents Needed <small class="required-asterisk">*</small></span>
+          <span class="doc-group-label"><span data-i18n="modal.docs_label">Documents Needed</span> <small class="required-asterisk">*</small></span>
           <div class="doc-checkboxes-grid">
             <label class="doc-checkbox-label">
               <input type="checkbox" name="requested_docs" value="English CV / Resume" checked>
-              <span>English CV / Resume</span>
+              <span data-i18n="modal.doc1">English CV / Resume</span>
             </label>
             <label class="doc-checkbox-label">
               <input type="checkbox" name="requested_docs" value="履歴書・職務経歴書 (Japanese Resume)">
-              <span>履歴書・職務経歴書 (Japanese)</span>
+              <span data-i18n="modal.doc2">履歴書・職務経歴書 (Japanese)</span>
             </label>
             <label class="doc-checkbox-label">
               <input type="checkbox" name="requested_docs" value="自己PR / Jiko PR Overview">
-              <span>自己PR / Jiko PR</span>
+              <span data-i18n="modal.doc3">自己PR / Jiko PR</span>
             </label>
             <label class="doc-checkbox-label">
               <input type="checkbox" name="requested_docs" value="Other / Project Details">
-              <span>Other / Project Details</span>
+              <span data-i18n="modal.doc4">Other / Project Details</span>
             </label>
           </div>
         </div>
 
         <label>
-          Note / Message <small class="optional-label">(Optional)</small>
-          <textarea name="message" rows="3" placeholder="Tell me briefly about the role, project, or timeline..."></textarea>
+          <span data-i18n="modal.note_label">Note / Message</span> <small class="optional-label">(Optional)</small>
+          <textarea name="message" rows="3" placeholder="Tell me briefly about the role, project, or timeline..." data-i18n-placeholder="modal.note_placeholder"></textarea>
         </label>
 
         <div class="form-footer">
-          <span class="form-note">I usually respond within 24-48 hours.</span>
-          <button class="button button-primary" type="submit" id="doc-submit-btn">
+          <span class="form-note" data-i18n="modal.footer_note">I usually respond within 24-48 hours.</span>
+          <button class="button button-primary" type="submit" id="doc-submit-btn" data-i18n="modal.submit_btn">
             Send Request
           </button>
         </div>
@@ -554,6 +557,7 @@
   <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
   <div class="toast" role="status" aria-live="polite"></div>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

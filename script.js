@@ -48,6 +48,62 @@ document.addEventListener("DOMContentLoaded", () => {
     updateThemeIcon();
   });
 
+  // ==================== BILINGUAL LANGUAGE SWITCHER (EN / JA) ====================
+  const langToggle = document.querySelector("#lang-toggle");
+  const langToggleText = document.querySelector("#lang-toggle-text");
+  const LANG_STORAGE_KEY = "portfolio-lang";
+
+  let currentLang = localStorage.getItem(LANG_STORAGE_KEY) || "en";
+
+  function applyLanguage(lang) {
+    const dicts = window.translations || (typeof translations !== "undefined" ? translations : null);
+    if (!dicts || !dicts[lang]) return;
+
+    currentLang = lang;
+    root.setAttribute("lang", lang);
+    localStorage.setItem(LANG_STORAGE_KEY, lang);
+
+    // Update toggle button: shows the OTHER language to switch to
+    if (langToggleText) {
+      langToggleText.textContent = lang === "ja" ? "EN" : "JA";
+    }
+    if (langToggle) {
+      const nextLang = lang === "ja" ? "English" : "Japanese";
+      langToggle.setAttribute("aria-label", `Switch to ${nextLang}`);
+      langToggle.setAttribute(
+        "title",
+        lang === "ja" ? "Switch to English / 英語に切り替え" : "Switch to Japanese / 日本語に切り替え"
+      );
+    }
+
+    const dict = dicts[lang];
+
+    // Update elements with textContent
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key]) {
+        el.textContent = dict[key];
+      }
+    });
+
+    // Update elements with placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (dict[key]) {
+        el.setAttribute("placeholder", dict[key]);
+      }
+    });
+  }
+
+  // Initialize language on page load
+  applyLanguage(currentLang);
+
+  langToggle?.addEventListener("click", () => {
+    const newLang = currentLang === "en" ? "ja" : "en";
+    applyLanguage(newLang);
+    showToast(newLang === "ja" ? "日本語に切り替えました" : "Switched to English");
+  });
+
   // ==================== MOBILE NAV ====================
   function closeMenu() {
     navLinks?.classList.remove("open");
