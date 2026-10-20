@@ -215,4 +215,105 @@ document.addEventListener("DOMContentLoaded", () => {
       submitButton.textContent = "Send Message";
     }
   });
+
+  // ==================== DOCUMENT REQUEST MODAL ====================
+  const docModal = document.querySelector("#doc-modal");
+  const openDocNav = document.querySelector("#open-doc-modal-nav");
+  const openDocHero = document.querySelector("#open-doc-modal-hero");
+  const closeDocBtn = document.querySelector("#close-doc-modal");
+  const docForm = document.querySelector("#doc-request-form");
+  const docSubmitBtn = document.querySelector("#doc-submit-btn");
+  const docStatus = document.querySelector("#doc-form-status");
+
+  function openModal() {
+    if (!docModal) return;
+    closeMenu();
+    docStatus.textContent = "";
+    docStatus.className = "form-status";
+    docModal.showModal();
+  }
+
+  function closeModal() {
+    docModal?.close();
+  }
+
+  openDocNav?.addEventListener("click", openModal);
+  openDocHero?.addEventListener("click", openModal);
+  closeDocBtn?.addEventListener("click", closeModal);
+
+  // Close modal when clicking on the backdrop
+  docModal?.addEventListener("click", (event) => {
+    if (event.target === docModal) {
+      closeModal();
+    }
+  });
+
+  function setDocStatus(message, type = "") {
+    if (!docStatus) return;
+    docStatus.textContent = message;
+    docStatus.className = `form-status ${type}`.trim();
+  }
+
+  docForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!docForm.checkValidity()) {
+      docForm.reportValidity();
+      return;
+    }
+
+    // Ensure at least one document checkbox is selected
+    const checkedDocs = [...docForm.querySelectorAll('input[name="requested_docs"]:checked')];
+    if (checkedDocs.length === 0) {
+      setDocStatus("Please select at least one document.", "error");
+      return;
+    }
+
+    // Honeypot check
+    const botcheck = docForm.querySelector('input[name="botcheck"]');
+    if (botcheck?.checked) {
+      setDocStatus("Request could not be sent.", "error");
+      return;
+    }
+
+    docSubmitBtn.disabled = true;
+    docSubmitBtn.textContent = "Sending...";
+    setDocStatus("");
+
+    try {
+      const formData = new FormData(docForm);
+
+      // Consolidate checked documents into a single readable field for the email
+      const docList = checkedDocs.map(c => c.value).join(", ");
+      formData.set("Documents Requested", docList);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        docForm.reset();
+        setDocStatus("Thank you! Your request has been sent. I'll review and reply to your email shortly.", "success");
+        showToast("Document request sent.");
+        setTimeout(() => {
+          closeModal();
+        }, 2200);
+      } else {
+        throw new Error(result.message || "Request failed.");
+      }
+    } catch (error) {
+      console.error("Web3Forms error:", error);
+      setDocStatus("Something went wrong. Please try again later.", "error");
+    } finally {
+      docSubmitBtn.disabled = false;
+      docSubmitBtn.textContent = "Send Request";
+    }
+  });
 });
+

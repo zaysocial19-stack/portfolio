@@ -271,6 +271,8 @@ ul {
   color: var(--accent);
   background: color-mix(in srgb, var(--accent) 6%, var(--surface));
   gap: 8px;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .button-resume:hover {
@@ -288,13 +290,16 @@ ul {
   border: 1px solid var(--accent);
   border-radius: 8px;
   color: var(--accent) !important;
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  font-family: inherit;
   font-size: 0.85rem;
   font-weight: 700;
+  cursor: pointer;
   transition: background var(--transition), transform var(--transition);
 }
 
 .nav-resume-btn:hover {
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
   transform: translateY(-1px);
 }
 
@@ -1072,6 +1077,206 @@ html.dark .form-status.error {
     bottom: 14px;
   }
 
+}
+
+/* ==================== DOCUMENT REQUEST MODAL ==================== */
+.doc-modal {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0;
+  max-width: 580px;
+  width: calc(100% - 32px);
+  margin: auto;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.35);
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.doc-modal::backdrop {
+  background: rgba(8, 17, 31, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.doc-modal-content {
+  padding: 32px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.doc-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.doc-modal-eyebrow {
+  display: block;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.doc-modal-title {
+  font-size: 1.6rem;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--text);
+}
+
+.doc-modal-close {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  font-size: 1.05rem;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.doc-modal-close:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  transform: rotate(90deg);
+}
+
+.doc-modal-desc {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.doc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.doc-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.doc-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.doc-form input[type="text"],
+.doc-form input[type="email"],
+.doc-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.doc-form input[type="text"]:focus,
+.doc-form input[type="email"]:focus,
+.doc-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.doc-checkboxes-group {
+  margin-block: 4px 6px;
+}
+
+.doc-group-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.required-asterisk {
+  color: #ef4444;
+}
+
+.optional-label {
+  color: var(--muted);
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
+.doc-checkboxes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.doc-checkbox-label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500 !important;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.doc-checkbox-label:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+}
+
+.doc-checkbox-label input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 580px) {
+  .doc-modal-content {
+    padding: 24px 18px;
+  }
+
+  .doc-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .doc-checkboxes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-modal-title {
+    font-size: 1.35rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

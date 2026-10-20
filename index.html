@@ -61,7 +61,7 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a class="nav-resume-btn" href="resume_v3.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <button class="nav-resume-btn" type="button" id="open-doc-modal-nav">Request Documents</button>
         <button class="theme-toggle" type="button" aria-label="Toggle color theme">☼</button>
       </div>
     </nav>
@@ -81,10 +81,16 @@
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">View My Work</a>
           <a class="button button-secondary" href="#contact">Get In Touch</a>
-          <a class="button button-resume" href="resume_v3.pdf" target="_blank" rel="noopener noreferrer">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Resume
-          </a>
+          <button class="button button-resume" type="button" id="open-doc-modal-hero">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Request Documents
+          </button>
         </div>
       </div>
     </section>
@@ -469,6 +475,81 @@
       <p>© <span id="year"></span> ZAY</p>
     </div>
   </footer>
+
+  <!-- ==================== DOCUMENT REQUEST MODAL ==================== -->
+  <dialog id="doc-modal" class="doc-modal">
+    <div class="doc-modal-content">
+      <div class="doc-modal-header">
+        <div>
+          <span class="doc-modal-eyebrow">Direct Inquiry</span>
+          <h2 class="doc-modal-title">Request Documents</h2>
+        </div>
+        <button type="button" class="doc-modal-close" id="close-doc-modal" aria-label="Close modal">✕</button>
+      </div>
+
+      <p class="doc-modal-desc">
+        To protect personal privacy, my full CV, Japanese 履歴書, and 自己PR are provided upon request. Please select what you need and I will reply directly to your email.
+      </p>
+
+      <form id="doc-request-form" class="doc-form" novalidate>
+        <input type="hidden" name="access_key" value="e7783afe-24c6-46cb-9abd-eca012680f7e">
+        <input type="hidden" name="subject" value="[Document Request] Portfolio Profile - Zay">
+        <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off" style="display: none;">
+
+        <div class="form-row">
+          <label>
+            Your Name
+            <input type="text" name="name" placeholder="e.g. Jane Doe / 田中 太郎" required maxlength="80">
+          </label>
+          <label>
+            Work / Direct Email
+            <input type="email" name="email" placeholder="name@company.com" required maxlength="120">
+          </label>
+        </div>
+
+        <label>
+          Company / Organization <small class="optional-label">(Optional)</small>
+          <input type="text" name="company" placeholder="Company, agency, school, or organization" maxlength="120">
+        </label>
+
+        <div class="doc-checkboxes-group">
+          <span class="doc-group-label">Documents Needed <small class="required-asterisk">*</small></span>
+          <div class="doc-checkboxes-grid">
+            <label class="doc-checkbox-label">
+              <input type="checkbox" name="requested_docs" value="English CV / Resume" checked>
+              <span>English CV / Resume</span>
+            </label>
+            <label class="doc-checkbox-label">
+              <input type="checkbox" name="requested_docs" value="履歴書・職務経歴書 (Japanese Resume)">
+              <span>履歴書・職務経歴書 (Japanese)</span>
+            </label>
+            <label class="doc-checkbox-label">
+              <input type="checkbox" name="requested_docs" value="自己PR / Jiko PR Overview">
+              <span>自己PR / Jiko PR</span>
+            </label>
+            <label class="doc-checkbox-label">
+              <input type="checkbox" name="requested_docs" value="Other / Project Details">
+              <span>Other / Project Details</span>
+            </label>
+          </div>
+        </div>
+
+        <label>
+          Note / Message <small class="optional-label">(Optional)</small>
+          <textarea name="message" rows="3" placeholder="Tell me briefly about the role, project, or timeline..."></textarea>
+        </label>
+
+        <div class="form-footer">
+          <span class="form-note">I usually respond within 24-48 hours.</span>
+          <button class="button button-primary" type="submit" id="doc-submit-btn">
+            Send Request
+          </button>
+        </div>
+
+        <p class="form-status" id="doc-form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
 
   <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
   <div class="toast" role="status" aria-live="polite"></div>
